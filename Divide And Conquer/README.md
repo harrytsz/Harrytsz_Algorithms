@@ -44,8 +44,7 @@ Strassen矩阵乘法（ Strassen’s Algorithm）
 傅里叶变换（ Cooley–Tukey Fast Fourier Transform (FFT) algorithm）
 
  ```python
-  
-def quick_sort(array):
+  def quick_sort(array):
  
     if len(array) < 2:  # 基线条件——最小子问题：数组中只有1个或0个数字，则无需再排序
         return array
@@ -54,4 +53,4 @@ def quick_sort(array):
         less = [i for i in array[1:] if i <= pivot]
         greater = [i for i in array[1:] if i > pivot]
         return quick_sort(less) + [pivot] + quick_sort(greater)
- ```
+```
