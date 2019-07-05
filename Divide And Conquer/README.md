@@ -35,7 +35,7 @@ def f(n):
         return n * f(n)
 ```
 
-分治的应用例子
+**分治的应用例子:**
 
 查找算法：二分法（Binary Search）
 排序算法：快速排序（Quick Sort）、归并排序（Merge Sort）
@@ -43,7 +43,7 @@ def f(n):
 Strassen矩阵乘法（ Strassen’s Algorithm）
 傅里叶变换（ Cooley–Tukey Fast Fourier Transform (FFT) algorithm）
 
- ```python
+```python
   def quick_sort(array):
  
     if len(array) < 2:  # 基线条件——最小子问题：数组中只有1个或0个数字，则无需再排序
