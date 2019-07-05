@@ -25,24 +25,48 @@
 > 1.基线条件（Base Case）：循环调用的结束。也就是上面说的可以直接求解的“最小子问题”。     
 > 2.递归条件（Recursive Case）：继续调用自己的条件。也就是将问题继续分解。
 
-例如：n! = n*(n-1)*(n-2)***1
- 
-```python 
-def f(n):
-    if n == 1:		# 基线条件
-        return 1
-    else:			# 递归条件
-        return n * f(n)
-```
 
 **分治的应用例子:**
 
 查找算法：二分法（Binary Search）      
 排序算法：快速排序（Quick Sort）、归并排序（Merge Sort）      
 最接近点对问题（ Closest Pair of Points）     
-Strassen矩阵乘法（ Strassen’s Algorithm）    
+Strassen矩阵乘法（ Strassen's Algorithm）    
 傅里叶变换（ Cooley–Tukey Fast Fourier Transform (FFT) algorithm）     
 
+### Binary Search:
+二分查找的步骤可总结如下：
+如果 x 等于中间项，则退出。否则：
+
+1）将数组划分为两个子数组，其大小约为原数组的一半。如果 x 小于中间项，则选择左子数组；如果 x 大于中间项，则选择右子数组。
+2）确定 x 是否在该子数组中，以攻克（解决）该子数组。如果子数组不够小，则进行递归处理。
+3）由子数组的答案获得原数组的答案。
+
+二分查找是最简单的分而治之算法，因为原实例仅被分解为一个较小实例，所以不存在输出结果的组合。原实例的答案就是较小实例的答案。
+
+```python
+"""
+Title : Binary Search
+Created By Harrytsz.
+"""
+
+def binary_search(data, target, low, high):
+ """
+ Return : True if target is found in indicated portion of a Python list.
+ """
+ if low > high:
+  return False
+ else:
+  mid = (low + high)//2
+  if target == data[mid]:
+   return True
+  elif target < data[mid]:
+   return binary_search(data, target, low, mid-1)
+  else:
+   return binary_search(data, target, mid+1, high)
+
+```
+   
 ```python
   def quick_sort(array):
  
