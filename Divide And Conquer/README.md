@@ -27,7 +27,7 @@
 
 ------------
 
-**分治的应用例子:**
+**<font color='red'>分治的应用例子:</font>**
 
 > 1.查找算法：二分法（Binary Search）      
 > 2.排序算法：归并排序（Merge Sort）、快速排序（Quick Sort）
