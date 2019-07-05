@@ -70,6 +70,8 @@ def binary_search(data, target, low, high):
             return binary_search(data, target, mid+1, high)
 ```
 
+--------
+
 ### 2.排序算法:
 
 #### 1. Merge Sort:
@@ -105,6 +107,8 @@ def merge(S1, S2, S):
             S[i+j] = S2[j]
             j += 1
 ```
+
+-------
 
 #### 2. Quick Sort:
 
