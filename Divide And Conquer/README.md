@@ -75,11 +75,12 @@ def binary_search(data, target, low, high):
 ### 2.排序算法:
 
 #### 1. Merge Sort:
-**基于数组的归并排序：**
+
+**基于数组的归并排序(递归版)：**
 ```python
 def merge_sort(S):
     """
-    Sort the elements of Python list S using the merge_sort algorithm.
+    Recursion Version
     Created By Harrytsz.
     """
     n = len(S)
@@ -107,8 +108,43 @@ def merge(S1, S2, S):
             S[i+j] = S2[j]
             j += 1
 ```
+------------
+
+**基于数组的归并排序(非递归版)：**
+
+```python
+def merge(src, res, start, inc):
+    end1 = start + inc  # boundary of run 1
+    end2 = min(start + 2*inc, len(src))   # boundary of run 2
+    x, y, z = start, start+inc, start    # index into run 1, run 2, result
+    while x < end1 and y < end2:
+        if src[x] < src[y]:
+            res[z] = src[x]; x += 1
+        else:
+            res[z] = src[y]; y += 1
+        z += 1
+    if x < end1:
+        res[z:end2] = src[x:end1]
+    elif y < end2:
+        res[z:end2] = src[y:end2]
+        
+def merge_sort(S):
+    """
+    Sort the elements of Python list S using the merge_sort algorithm.
+    """
+    n = len(S)
+    logn = math.ceil(math.log(n, 2))
+    src, dest = S, [None]*n      # make temporary storage for dest
+    for i in (2**k for k in range(logn)):
+        for j in range(0, n, 2*i):
+            merge(src, dest, j, i)
+        src, dest = dest, src
+    if S is not src:
+        S[0:n] = src[0:n]
+```
 
 ------------
+
 
 **基于队列的归并排序：**
 
