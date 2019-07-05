@@ -28,14 +28,18 @@
 
 **分治的应用例子:**
 
-查找算法：二分法（Binary Search）      
-排序算法：快速排序（Quick Sort）、归并排序（Merge Sort）      
-最接近点对问题（ Closest Pair of Points）     
-Strassen矩阵乘法（ Strassen's Algorithm）    
-傅里叶变换（ Cooley–Tukey Fast Fourier Transform (FFT) algorithm）     
+1.查找算法：二分法（Binary Search）      
+2.排序算法：归并排序（Merge Sort）、快速排序（Quick Sort）
+3.最接近点对问题（ Closest Pair of Points）     
+4.Strassen矩阵乘法（ Strassen's Algorithm）    
+5.傅里叶变换（ Cooley–Tukey Fast Fourier Transform (FFT) algorithm）     
 
-### Binary Search:
+### 1.查找算法：
+
+#### Binary Search:
+
 二分查找的步骤可总结如下：
+
 如果 x 等于中间项，则退出。否则：
 
 1）将数组划分为两个子数组，其大小约为原数组的一半。如果 x 小于中间项，则选择左子数组；如果 x 大于中间项，则选择右子数组。
@@ -65,7 +69,13 @@ def binary_search(data, target, low, high):
         else:
             return binary_search(data, target, mid+1, high)
 ```
-   
+
+### 2.排序算法:
+
+#### 1. Merge Sort:
+
+#### 2. Quick Sort:
+
 ```python
   def quick_sort(array):
  
